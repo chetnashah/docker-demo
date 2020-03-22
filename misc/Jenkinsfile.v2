@@ -10,7 +10,7 @@ node {
      def myTestContainer = docker.image('node:4.6')
      myTestContainer.pull()
      myTestContainer.inside {
-       sh 'echo "user inside container: $USER"'
+       sh 'echo "user inside container: $USER, UID: $UID"'
        sh 'npm install --only=dev'
        sh 'npm test'
      }
